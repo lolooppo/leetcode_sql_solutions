@@ -3,6 +3,6 @@ SELECT query_name, ROUND(AVG(rating/position), 2) AS quality, ROUND(SUM(CASE WHE
 
 FROM Queries
 
-WHERE query_name is not null
+WHERE query_name IS NOT NULL
 
 GROUP BY query_name;
