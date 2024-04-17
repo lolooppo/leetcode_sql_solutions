@@ -1,0 +1,8 @@
+# Write your MySQL query statement below
+SELECT s1.id, IF(s2.student IS NOT NULL, s2.student, s1.student) student
+
+FROM Seat AS s1 LEFT JOIN Seat AS s2
+
+ON (s1.id%2 AND s2.id%2=0 AND s2.id-s1.id=1) OR (s1.id%2=0 AND s2.id%2 AND s1.id-s2.id=1)
+
+ORDER BY 1
